@@ -1,4 +1,5 @@
-# Blog shareing Backend
+# Blog shareing Backend 
+# This is a blog app. Where every one can share knowledge of technologies
 # Demo: https://capstone-udacity-ddc.herokuapp.com/
 ## Getting Started
 

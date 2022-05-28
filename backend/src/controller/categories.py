@@ -20,7 +20,10 @@ def all_categories():
     try:
         all_categories  = Category.query.all()
         categories = mappingCategories(all_categories)
-        return {'categories': categories}
+        return jsonify({
+            'categories': categories,
+            "success": True,
+        })
     except Exception as e:
         abort(500)
 

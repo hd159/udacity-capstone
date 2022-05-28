@@ -15,10 +15,23 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     db.create_all()
 
+class inheritedClassName(db.Model):
+   __abstract__ = True
+   def insert(self):
+      db.session.add(self)
+      db.session.commit()
+
+   def delete(self):
+      db.session.delete(self)
+      db.session.commit()
+
+   def update(self):
+      db.session.commit()
+
 """
 Category
 """
-class Category(db.Model):
+class Category(inheritedClassName):
     __tablename__ = 'categories'
 
     id = Column(Integer, primary_key=True)
@@ -27,17 +40,6 @@ class Category(db.Model):
     def __init__(self, name, image_link):
         self.name = name
         self.image_link = image_link
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
 
     def format(self):
         return {
@@ -53,7 +55,7 @@ class Category(db.Model):
 """
 Post
 """
-class Post(db.Model):
+class Post(inheritedClassName):
     __tablename__ = 'posts'
 
     id = Column(Integer, primary_key=True)
@@ -102,17 +104,6 @@ class Post(db.Model):
             'created_at': self.created_at.strftime("%b %d %Y "),
             'user_id': self.user_id,
         }
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
 
     def __repr__(self):
         return self.title
