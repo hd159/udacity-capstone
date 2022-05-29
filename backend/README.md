@@ -73,5 +73,5 @@ The `--reload` flag will detect file changes and restart the server automaticall
    - Register 2 users - assign the Creator role to one and Manager role to the other.
    - Sign into each account and make note of the JWT.
    - Import the postman collection `.final-udacity.postman_collection.json`
-   - Right-clicking the collection folder for barista and manager, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
+   - Right-clicking the collection folder for creator and admin, navigate to the authorization tab, and including the JWT in the token field (you should have noted these JWTs).
    - Run the collection and correct any errors.
