@@ -1,4 +1,4 @@
-# Blog shareing Frontend
+# Blog sharing Frontend
 # Demo: https://udacity-fe-final.herokuapp.com
 # Getting Setup
 
